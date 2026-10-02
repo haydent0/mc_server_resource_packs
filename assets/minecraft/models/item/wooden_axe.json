@@ -1,6 +1,0 @@
-{
-  "parent": "kspack:item/axe_handheld",
-  "textures": {
-    "layer0": "minecraft:item/wooden_axe"
-  }
-}
