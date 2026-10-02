@@ -1,0 +1,126 @@
+{
+  "model": {
+    "type": "minecraft:condition",
+    "property": "minecraft:component",
+    "predicate": "minecraft:custom_data",
+    "value": {
+      "ks_fish_perfect": true
+    },
+    "on_true": {
+      "type": "minecraft:condition",
+      "property": "minecraft:component",
+      "predicate": "minecraft:custom_data",
+      "value": {
+        "ks_fish_corrupted": true
+      },
+      "on_true": {
+        "type": "minecraft:condition",
+        "property": "minecraft:component",
+        "predicate": "minecraft:custom_data",
+        "value": {
+          "ks_fish_golden": true
+        },
+        "on_true": {
+          "type": "minecraft:composite",
+          "models": [
+            {
+              "type": "minecraft:model",
+              "model": "kspack:item/fish/salmon/corrupted_golden"
+            },
+            {
+              "type": "minecraft:model",
+              "model": "kspack:item/fish/perfect"
+            }
+          ]
+        },
+        "on_false": {
+          "type": "minecraft:composite",
+          "models": [
+            {
+              "type": "minecraft:model",
+              "model": "kspack:item/fish/salmon/corrupted"
+            },
+            {
+              "type": "minecraft:model",
+              "model": "kspack:item/fish/perfect"
+            }
+          ]
+        }
+      },
+      "on_false": {
+        "type": "minecraft:condition",
+        "property": "minecraft:component",
+        "predicate": "minecraft:custom_data",
+        "value": {
+          "ks_fish_golden": true
+        },
+        "on_true": {
+          "type": "minecraft:composite",
+          "models": [
+            {
+              "type": "minecraft:model",
+              "model": "kspack:item/fish/salmon/golden"
+            },
+            {
+              "type": "minecraft:model",
+              "model": "kspack:item/fish/perfect"
+            }
+          ]
+        },
+        "on_false": {
+          "type": "minecraft:composite",
+          "models": [
+            {
+              "type": "minecraft:model",
+              "model": "minecraft:item/salmon"
+            },
+            {
+              "type": "minecraft:model",
+              "model": "kspack:item/fish/perfect"
+            }
+          ]
+        }
+      }
+    },
+    "on_false": {
+      "type": "minecraft:condition",
+      "property": "minecraft:component",
+      "predicate": "minecraft:custom_data",
+      "value": {
+        "ks_fish_corrupted": true
+      },
+      "on_true": {
+        "type": "minecraft:condition",
+        "property": "minecraft:component",
+        "predicate": "minecraft:custom_data",
+        "value": {
+          "ks_fish_golden": true
+        },
+        "on_true": {
+          "type": "minecraft:model",
+          "model": "kspack:item/fish/salmon/corrupted_golden"
+        },
+        "on_false": {
+          "type": "minecraft:model",
+          "model": "kspack:item/fish/salmon/corrupted"
+        }
+      },
+      "on_false": {
+        "type": "minecraft:condition",
+        "property": "minecraft:component",
+        "predicate": "minecraft:custom_data",
+        "value": {
+          "ks_fish_golden": true
+        },
+        "on_true": {
+          "type": "minecraft:model",
+          "model": "kspack:item/fish/salmon/golden"
+        },
+        "on_false": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/salmon"
+        }
+      }
+    }
+  }
+}
